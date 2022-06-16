@@ -30,12 +30,36 @@ namespace RotateObject
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.TmrSpaceship = new System.Windows.Forms.Timer(this.components);
+            this.SuspendLayout();
+            // 
+            // TmrSpaceship
+            // 
+            this.TmrSpaceship.Enabled = true;
+            this.TmrSpaceship.Interval = 1;
+            this.TmrSpaceship.Tick += new System.EventHandler(this.TmrSpaceship_Tick);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.DoubleBuffered = true;
+            this.KeyPreview = true;
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Timer TmrSpaceship;
     }
 }
 
